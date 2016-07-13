@@ -1,0 +1,175 @@
+
+html{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background: #013;
+    width:100%;
+    height:100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+div{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+p{
+    margin:0;
+    padding:0;
+}
+
+a{ color:#fff;}
+
+#outerWrap{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    bottom:0;
+    background:#000;
+    overflow:hidden;
+}
+
+#videoWrap{
+    position:absolute;
+    text-align:center;
+    z-index:10;
+    width:100%;
+    height:100%;
+    background:#000;
+}
+
+#videoWrap::before{
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  font-size:0;
+  margin-left:-5px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { /*safari-only margin nonsense*/
+    ::i-block-chrome,#videoWrap::before{
+        margin-left:0;
+        margin-right:-5px;
+    }
+}
+
+
+#videoWrap video{
+        height:100%;
+    width:100%;
+    max-width:100%;
+    max-height:100%;
+        display: inline-block;
+    vertical-align: middle;
+}
+
+#centerContent{ 
+    width:50%;
+    min-width:400px;
+    min-height:100%;
+    padding: 60px 40px 0 40px;
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+}
+#centerContent p, #centerContent div{
+    z-index:1;
+    position:relative;
+}
+
+#centerContent p{
+    line-height:1.7em;
+}
+
+a.lightButton{
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    display: block;
+    padding: 20px;
+    border: 1px solid #fff;
+    width: 60px;
+    border-radius: 15px;  
+}
+
+a#skipVideo{
+    position:absolute;
+    z-index:12;
+    top:20px;
+    right:20px;
+    background:#000;
+    opacity:0.8
+}
+
+
+a#playAudio{
+    margin: 0 auto;
+}
+
+
+a#playAudio:hover{
+   background:#0053B9; 
+}
+
+
+#centerContent::after{ /*semi-transparent bg color that leaves other elements solid */
+    content:"";
+    display:block;
+    opacity:0.8;
+    position:absolute;
+    z-index:0;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#013;
+}
+
+#audioControl{
+    width:100%;
+    text-align:center;
+    margin:60px 0;
+    height:60px;
+}
+
+#centerContent div#audioWrap{
+    display:none;
+    width:300px;
+    left:50%;
+    margin-left:-150px;
+    position:absolute;
+    bottom:15px;
+}
+
+#audioWrap audio{
+    width:300px;
+    max-width:300px;
+}
+
+#credits{
+    text-align:center;
+    font-size:0.8em;
+    width: 200px;
+    margin: 0 auto;
+}
+
+#credits p{
+    text-align:left;
+}
+
+#credits p a{
+    
+    float:right;
+}

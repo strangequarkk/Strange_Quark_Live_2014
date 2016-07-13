@@ -1,0 +1,255 @@
+
+(function($) {
+    $(document).ready(function(){
+        
+        
+/** -----------Modal contact window-------------- **/
+        
+        
+        //open modal window on request link
+        $('.reqForm').click(function(){
+            $('#ContactModal').fadeIn(500);
+            //center form vertically
+            var formHeight=$('#ContactModal > .formWrap > .innerForm').outerHeight();
+            $('#ContactModal > .formWrap > .innerForm').css('margin-top', '-'+(formHeight/2)+"px");
+            
+        })
+        
+        //close modal window on clickout
+        $(document).mouseup(function (e)
+        {
+            var container = $("#ContactModal .innerForm");
+            var datepicker = $("#ui-datepicker-div")
+
+            if (!container.is(e.target) // if the target of the click isn't the container...
+                && container.has(e.target).length === 0// ... nor a descendant of the container
+                && datepicker.has(e.target).length === 0) //and also not the datepicker
+            {
+                $("#ContactModal").fadeOut(500);
+            }
+        });
+        
+        
+        //"Decoy" styled checkboxes
+        var otherBox =$('#Form_CommissionForm_ProjectType_other');
+        
+        //set up decoy checkboxes according to checked state
+        $("#ContactModal form input[type='checkbox']").after("<span class='checkStyle'></span>");
+        $("#ContactModal form input:checked").next('span.checkStyle').addClass('checked');
+        if($('#Form_CommissionForm_TypeOther').val){
+            otherBox.next('span.checkStyle').click();
+        }
+        //change checked state on click
+        $("span.checkStyle").click(function(){
+            var realCheck =$(this).prev("input[type='checkbox']");
+            
+            if(realCheck.attr('checked')!="checked"){
+                realCheck.attr('checked',"checked");
+                $(this).addClass('checked');
+            }else{
+                realCheck.removeAttr('checked');
+                $(this).removeClass('checked');
+            }
+            
+        });
+        //check 'other' if user types in 'project type: other' box
+        $('#Form_CommissionForm_TypeOther').keyup(function(){
+            
+            if($(this).val()){
+               if(otherBox.attr('checked')!="checked"){
+                  otherBox.next('span.checkStyle').click(); 
+               }
+            }else{
+                if(otherBox.attr('checked')=="checked"){
+                  otherBox.next('span.checkStyle').click(); 
+               }
+            }
+        });
+        
+        //Add stars to required fields
+        $('div.field.req label:first-child').append("<span class='req'>*</div>");
+        
+        
+        //use Ajax to submit
+        var formContents = "";
+        $('#Form_CommissionForm').submit(function(event){
+            
+            /* stop form from submitting normally */
+                event.preventDefault();
+
+                /* Send the data using post */
+                var posting = $.post(thisLink+'AjaxSubmit', {values: $(this).serialize()});
+                formContents= $("#ContactModal .innerForm").html();
+                $("#ContactModal .innerForm").append("<span id='whitecover'></span><span id='loadingGif'></span>");
+                
+                /* Send a thank you message if it worked*/
+                posting.done(function(data) {
+                    displayFormResult(data);
+                });
+                
+                /* Put the results in a div */
+                posting.fail(function(data) {
+                    displayFormResult("There was an error processing your request. Sorry about that.");
+                });
+                    
+           
+        });
+        
+        
+        function displayFormResult(message){
+            var formDiv = $("#ContactModal .innerForm");
+                    var outerDiff= formDiv.outerHeight() - formDiv.height();
+                    formDiv.css('height', formDiv.height());
+                    var wrapPadding = parseInt(formDiv.css('padding-top'));
+                    $("#ContactModal .innerForm").empty().append("<p id='thanksMsg'>"+message+"</p>");
+                    var newHeight = parseInt($('p:first', formDiv).height())+(wrapPadding*2);
+                    var newMarg = (newHeight+outerDiff)/2;
+                    formDiv.animate({
+                        height : newHeight+"px",
+                        margin : "-"+newMarg+"px 0 0 0" 
+                    });
+        }
+        
+/*------------- End contact window stuff--------------- */
+        
+
+/* -------------Home page feature---------------------- */
+        if($('#homeSpinnerLogo').length > 0){
+            var spinSpeed=1000;
+
+            //speed up & add colored shadow to STRANGE QUARK text 
+            $( "a.brainFeat" ).hover(    
+              function() {
+                  spinSpeed=2500;
+                  var shadowstyle = ($(this).attr("id")=="brainL") ? "-1px 0 0 #f00" : "1px 0 0 #0ff";
+                 $("#homeSpinnerLogo h4").css("text-shadow", shadowstyle);
+                 $(this).children("img.brainCold").hide();
+                 $(this).children("img.brainHot").show();
+              }, function() { //turn things off on exit
+                 $("#homeSpinnerLogo h4").css("text-shadow", "none");
+                 $(this).children("img.brainCold").show();
+                 $(this).children("img.brainHot").hide();
+                 spinSpeed=1000;
+              }
+            );
+
+            // spinner accelerates as mouse approaches, speed remains steady when mouse enters
+             var mX, mY, distance, prevDist,
+            $element  = $('#homeSpinnerLogo');
+
+            var deg = 1;
+            
+            function calculateDistance(elem, mouseX, mouseY) {
+                return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
+            }
+
+            $(document).mousemove(function(e) {  
+                mX = e.pageX;
+                mY = e.pageY;
+                prevDist=distance;
+                distance = calculateDistance($element, mX, mY);
+                deg=parseInt(spinSpeed/distance);
+                if (distance <80){ //activate "hot" styles and keep steady speed
+                    spinSpeed=2500;
+                    deg=parseInt(spinSpeed/80);
+                    $("#homeSpinnerLogo h4").css("text-shadow", "-2px 0 0 #f00,2px 0 0 #0ff");
+                    $("img.brainCold").hide();
+                    $("img.brainHot").show();   
+                    
+                }else if(prevDist <80){ //turn hot styles off on exit
+                    spinSpeed=1000;
+                    $("a.brainFeat").each(function(){
+                        if(!$(this).is(":hover")){
+                            $(this).children("img.brainCold").show();
+                            $(this).children("img.brainHot").hide();
+                            var shadowstyle = ($(this).attr("id")!="brainL") ? "-1px 0 0 #f00" : "1px 0 0 #0ff";
+                            $("#homeSpinnerLogo h4").css("text-shadow", shadowstyle);
+                        }
+                });
+
+                }
+
+            });
+
+            var angle = 0;
+            setInterval(function(){
+                  var angleVal=(Math.abs(angle)+deg)%360; //don't let the browser count itself to death
+                  angle = 0-angleVal;
+                 $("#homeSpinnerLogo > img").rotate(angle);
+            },50);
+        }
+/* --------------End Home page feature-------------- */
+
+
+/* --------------Illustration Gallery--------------- */
+        //set initial tab 'current' based on url
+        if(document.URL.indexOf("illustration/tagged") >=0){
+            
+            $('#galleryTags li').removeClass('current');
+            var fullURL = document.URL.split(location.host);
+           
+            $('#galleryTags li a[href="'+fullURL[1]+'"]').parent('li').addClass('current');
+        }
+        
+        //AJAX category tabs
+        $('#galleryTags li a').click(function(event){
+            event.preventDefault();
+            
+            $('#galleryTags li').removeClass('current');
+            $(this).parent('li').addClass('current');
+            
+            var root = location.protocol + '//' + location.host;
+            var getTagged = $.post(root+$(this).attr('href'))
+            .done(function(response){
+                
+                var newContent = $(response).find('#illustWrapper').html();
+                $('#illustWrapper').html(newContent);
+                loadGallery();
+            });
+        });
+
+        loadGallery();
+
+/* --------------End Illustration Gallery-------------- */
+        
+    });
+    function loadGallery(){
+          /*$('.galleryItem').magnificPopup({ 
+          delegate: 'a.fancybox',
+          type: 'image',
+          gallery: {
+              enabled:true
+          }
+                // other options
+        }); */
+        
+        //activate fancybox gallery (illustration gallery)
+        var galItemInfo = "";
+        $(".fancybox").fancybox({
+            padding:0,
+            margin:[0, 60, 0, 60],
+            beforeLoad: function() {
+                //get image info
+                var el, id = $(this.element).data('title-id');
+
+                if (id) {
+                    el = $('#' + id);
+
+                    if (el.length) {
+                        galItemInfo = el.html();
+                    }
+                }
+            },
+            afterLoad   : function() {
+               
+                this.inner.prepend( '<div class="info">'+galItemInfo+'</div>' );
+
+            }
+            
+        });
+    }
+    
+})(jQuery);
+
+
+

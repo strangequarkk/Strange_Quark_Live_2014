@@ -1,0 +1,369 @@
+/* 
+    Document   : layout.css
+    Created on : Aug 24, 2013, 2:55:29 PM
+    Author     : Kae Hunter
+    Description:
+        Purpose of the stylesheet follows.
+*/
+/*css reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* /End css reset */
+
+root { 
+    margin:0;padding:0;
+    display: block;
+}
+
+
+
+html {
+        margin:0;
+    padding:0;
+    color:#fff;
+  background: #000 url(../images/mainBG.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body{
+    font-family:cantarellregular, arial, sans-serif;
+    line-height:1.2em;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+
+
+a{text-decoration:none;color:#fff;}
+a.noclick{cursor:default}
+
+
+.mainWidth{width:85%;max-width:960px;margin:0 auto;}
+.clear{clear:both;}
+
+#Container{margin:0;padding:0;}
+
+#Layout{padding:0px;margin-bottom:110px;}
+#Layout > h1{
+    font-family:code, cantarellBold, sans-serif;text-transform:uppercase;
+    letter-spacing:0.05em;
+    padding-top:1em;
+}
+/*********** Modal contact Form ************/
+
+#ContactModal{position:absolute;z-index:100;top:0;min-width:100%;min-height:100%;display:none;}
+.modalShade{
+    position:absolute;z-index:99;width:100%;height:100%;
+    background-color:#000;opacity:0.8;filter:alpha(opacity=80);
+}
+span.req{color:#f00}
+#ContactModal .formWrap{
+    position:absolute;clear:both;width:100%;max-width:565px;height:0;
+    left:0;right:0;top:0;bottom:0;margin:auto;z-index:102;
+}
+#ContactModal .innerForm{
+    color:#000;background-color:#fff;padding:30px; border-radius:15px;
+     border-right:4px solid #0ff;border-top:2px solid #0ff;
+    -webkit-box-shadow: -4px 2px 0px 0px #f00;
+    box-shadow: -4px 2px 0px 0px #f00;
+    font-size:20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.innerForm h1{
+    font-family:code, sans-serif;
+    text-align:center;
+    font-size:30px;
+    margin-bottom:20px;
+}
+span.checkStyle{
+            display:inline-block;height:12px;width:12px;
+           background:url(../images/checkbox.png) no-repeat 0 2px;cursor:pointer;
+           margin-right:-4px;}
+span.checkStyle:hover{background-position:0 -10px}
+span.checkStyle.checked{background-position:0 -24px}
+#ContactModal form input[type="checkbox"]{display:none;}
+#ContactModal form div.holder-required{color:#f00;}
+#ContactModal form div.field{clear:both;width:100%;margin-bottom:8px;min-height:22px;}
+#ContactModal form div.field#ProjectType{clear:none;float:left;}
+#ContactModal form div.field#ProjectType .middleColumn{display:block;}
+#ContactModal form div.field.nolabel{width:0;margin:0;display:inline;clear:none;float:left;margin:1em 0 0 0}
+#ContactModal form input{border:1px solid #000;background:#fff;min-height:18px;float:right;margin-top:0.2em;}
+#ContactModal form div.holder-required input{border:1px solid #f00}
+
+#ContactModal form input[type="submit"]{font-size:18px;text-transform:uppercase;;border-radius:6px;cursor:pointer;}
+#ContactModal form input[type="submit"]:hover {background:#f00;border-color:#f00;color:#fff;}
+#ContactModal form textarea{
+    border:1px solid #000;background:#fff;width:100%;margin:10px 0;padding:5px;
+    font-family:cantarellregular, arial, sans-serif;font-size:12px;
+}
+
+#ContactModal form label{text-transform:uppercase;display:inline;}
+#ContactModal form .middleColumn{display:inline;}
+#ContactModal form ul{display:inline}
+#ContactModal form li {display:inline;margin-left:10px;line-height:14px;vertical-align:top;}
+#ContactModal form li label{text-transform:none;font-size:14px;margin:0px;float:none;}
+#ProjectType li input[type="checkbox"]{margin:0;padding:0;}
+
+span.message.required{display:none;}
+#whitecover{position:absolute;top:0;bottom:0;left:0;right:0;background:#fff;}
+#loadingGif{position:absolute;top:0;bottom:0;left:0;right:0;background: url(../images/split-spinner-spinning.gif) no-repeat center center fixed;}
+
+#thanksMsg{font-size:16px}
+
+/*********** /Modal contact Form ************/
+
+/*********** Home Page ************/
+#homeMainFeat{position:absolute; top:0; bottom:100px;left:0; right:0;}
+#brainWrap{position:relative;height:100%;width:65%;margin:0 auto;}
+a.brainFeat{display:inline-block;position:relative;width:49%;height:100%;vertical-align:middle;}
+a.brainFeat img{height:90%;position:absolute;top:0;bottom:0;margin:auto;}
+a.brainFeat h4{position:absolute;font-family:code,​sans-serif;line-height:1.2em;letter-spacing:0.07em;font-size:20px;}
+a.brainFeat img.brainHot{display:none}
+a#brainL{text-align:right;}
+a#brainL img{right:0;}
+a#brainL h4{top:5%;text-align:left;}
+a#brainL:hover h4{text-shadow:-2px 0 0 #f00;}
+a#brainR h4{right:0; bottom:3%}
+a#brainR:hover{text-shadow:2px 0 0 #0ff;}
+#homeSpinnerLogo{position:absolute;top:0;bottom:0;left:0;right:0; margin:auto;width:9em;height:9em;text-align:center;}
+#homeSpinnerLogo img{width:100%;height:auto;position:relative;z-index:0;cursor:pointer}
+#homeSpinnerLogo h4{position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;height:2em;z-index:5;
+    font-family:code,​sans-serif;letter-spacing: 0.07em;line-height:1.2em;font-size:20px;cursor:pointer;}
+/*********** End Home Page ************/
+
+
+/*********** WebDev gallery ************/
+.gallerySect p{font-size:12px;text-align:left;}
+.gallerySect > a{display:block;width:100%; position:relative;text-align:center;}
+.gallerySect p span.galTitle{font-size:20px;}
+img.galItemArea{margin-top:10px;opacity:0.8}
+.gallerySect:hover img.galItemArea{opacity:1}
+
+/*********** /Webdev gallery ************/
+
+/*********** WebDev Project Page ************/
+#clientWrapper{width:700px; margin: 0 auto;}
+.clientBigImg{width:100%;position:relative; text-align:center;display:block;margin-bottom:0.6em;}
+div.code{max-width:90%;position:relative;margin:1em auto;
+    word-break:break-word;border:1px solid #fff; padding: 0.4em;line-height:1.2em;
+    font-family:courier,monospace;font-size:14px;background-color:#000}
+#clientWrapper h2{font-size:22px;text-transform:uppercase;}
+#clientWrapper h4{font-style:italic;font-size:14px;line-height:1.1em;}
+#clientSiteLink{font-size:14px;margin-bottom:0.8em;display:block;}
+#clientSiteLink:hover{text-decoration:underline;}
+#clientWrapper p{font-size:16px;margin-bottom:0.8em;line-height:1.2em;}
+
+/*********** /Webdev Project Page ************/
+
+
+/*********** Illustration gallery ************/
+#galleryTags li{display:inline-block; font-size:14px;}
+/*.gallerySect:first-child{margin-top:50px;border-top:none;padding-top:0;}*/
+.gallerySect{margin:0 auto;border-top:1px solid #fff;padding:10px 0 0 0;position:relative;}
+.galItemArea{margin:0 auto 10px auto; width:90%}
+
+li.galleryItem{display:inline-block; vertical-align:top;margin:10px 2px 0 2px;}
+li.galleryItem a.fancybox img{opacity:0.75}
+li.galleryItem a.fancybox:hover img{opacity:1}
+
+/* Fancybox stuff */
+.fancybox-nav {
+    width: 60px;       
+}
+
+.fancybox-default-overlay {
+    background:#000;      
+}
+.fancybox-next {
+    right: -60px;
+}
+a.fancybox-close{top:-8px;right:-8px;display:none;}
+
+.fancybox-wrap:hover a.fancybox-close {display:block;}
+.fancybox-nav span {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+.fancybox-prev {
+    left: -60px;
+}
+
+.info{display:none;position:absolute;bottom:0; 
+      width:100%;z-index:100;
+     color:#fff;background:none;text-align:center
+}
+.info .infoContent{ position:relative;z-index:110;padding: 5px;}
+.backShade{width:100%;height:100%;
+           left:0; right:0;
+           background:#000;opacity:0.8;
+           z-index:99;
+          display:block;position:absolute;bottom:0
+}
+.fancybox-inner .info{
+    display:block; opacity:0;visibility:hidden;
+    transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s; /* Safari */
+    line-height:1.2em;}
+.fancybox-inner:hover .info{opacity:1;visibility:visible}
+.fancybox-inner .info h4{font-size:14px;}
+.fancybox-inner .info p{font-size:12px;font-style:italic;}
+
+.fancybox-inner .info a.buyButton{color:#000;background:#fff;border-radius:10px;
+          font-size:14px;padding:0 5px;margin:5px 0;}
+.fancybox-inner .info a.buyButton:hover{font-weight:700}
+/*********** End Illustration gallery ************/
+
+
+/*********** CONTACT PAGE ************/
+
+.split{width:49.7%;margin:100px 0 0 0;padding:0;display:inline-block;
+      vertical-align:top;height:100%;position:relative}
+.splitLeft{text-align:right;}
+a.echoButton{
+    line-height:1.1em;
+    position:absolute;right:10px;
+    display:block;padding:40px 60px;background:#fff;
+    border-radius:10px;border-right:4px solid #0ff; border-top:2px solid #0ff;
+    -webkit-box-shadow: -4px 2px 0px 0px #f00;
+    box-shadow: -4px 2px 0px 0px #f00;
+    text-transform:uppercase;color:#000;
+    text-align:center;
+    
+}
+a.echoButton p{position:relative;z-index:2;font-size:14px; line-height:1em;padding-bottom:0.4em}
+
+a.echoButton p.hoverSplit{font-size:40px;font-family:code, cantarellbold, sans-serif;padding-bottom:0;}
+a.echoButton:hover p.hoverSplit{text-shadow: -2px 0 0 #f00, 2px 0 0 #0ff;}
+
+.splitRight{text-align:left;}
+.splitRight p{padding:0;margin:0;font-size:16px;}
+.splitRight a:hover {text-decoration:underline}
+.splitRight a.noclick:hover{text-decoration:none;}
+
+
+/*********** END CONTACT PAGE ************/
+
+/*********** ABOUT PAGE ************/
+.split.aboutLeft{margin-top:10px;}
+.split.aboutRight{margin-top:50px;}
+#aboutImage {text-align:center}
+#aboutImage img{width:350px;height:420px;}
+.aboutRight h2{font-size:20px;padding:0.5em 0;}
+.aboutRight ul{font-size:14px;padding-left:2em;list-style-type:disc;}
+.aboutRight a{font-weight:700;}
+
+/*********** END ABOUT PAGE ************/
+
+
+#Footer{
+ background:#000;position:fixed;bottom:0;left:0;right:0;text-align:center;
+}
+
+#Footer a{color:#fff;}
+
+.barrier{
+    border-top:1px solid #0ff;border-bottom:1px solid #f00;
+}
+
+#footBarrier{
+    position:absolute;top:0;height:1px;width:100%;
+    background-color:#fff;
+}
+
+#footLogo{position:absolute;left:10px;top:11px;display:block;width:45px;height:46px;
+          overflow:hidden;background:url(../images/whitehole-logo-roll.png) center -47px no-repeat;}
+#footLogo:hover{background-position:center 0;}
+
+#Navigation ul{list-style-type:none;margin-bottom:8px;}
+#Navigation ul li{
+      display:inline-block;position:relative;padding:23px 5px 0;
+      font-family:code, sans-serif;letter-spacing:0.05em;
+}
+#Navigation ul li a{position:relative;white-space:nowrap;}
+ li.current .hoverGlitch,  li.section .hoverGlitch{
+    text-shadow:-1px 0 0 #f00,1px 0 0 #0ff;
+}
+ li:hover .hoverGlitch, .echoButton:hover .hoverGlitch{
+    text-shadow:-2px 0 0 #f00,2px 0 0 #0ff;
+}
+
+div.dropUp{
+       display:none;
+       position:absolute;bottom:24px;padding-bottom:1em;
+       width:150px;left:50%;margin-left:-75px;
+       background:url(../images/downpointerRC.png) center bottom no-repeat;
+       font-family:cantarellbold, code, sans-serif;letter-spacing:-0.01em;
+}
+#Navigation ul li:hover div.dropUp{display:block;}
+
+div.echoBox{background-color:#fff;border-radius: 7px 7px 0 0; color:#000;padding:5px;
+        border-top:1px solid #0ff;border-right:3px solid #0ff;
+        -webkit-box-shadow: -3px -1px 0px 0px #f00;
+        box-shadow: -3px -1px 0px 0px #f00; }
+#Footer div.echoBox a{color:#000;font-size:14px;vertical-align:top;}
+#Footer div.echoBox a#requestWork:hover{font-weight:700;}
+
+#social a {
+    display:inline-block;width:27px;height:26px;margin: 0 10px 0 0;
+    overflow:hidden;background-position:center 0;background-repeat:no-repeat;
+}
+#social a:last{margin-right:0}
+#social a:hover{background-position:center -26px;}
+#social a.twitter {background-image:url(../images/twt.png);}
+#social a.linkedIn {background-image:url(../images/lkin.png);}
+#social a.faceBook {background-image:url(../images/fb.png);}
+
+#copyright{font-size:10px;color:#666;margin-top:0;}
+

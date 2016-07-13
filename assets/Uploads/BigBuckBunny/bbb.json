@@ -1,0 +1,26 @@
+{
+    "bgImgPath": "whaleBG.jpg",
+    "headTitle" : "F. Unterseher Test Page",
+    "skipText" : "Skip &raquo;",
+    "listenText" : "Listen",
+    "copyText" : "The word &quot;song&quot; is used to describe the pattern of regular and predictable sounds made by some species of whales, notably the humpback whale. This is included with or in comparison with music, and male humpback whales have been described as &quot;inveterate composers&quot; of songs that are &quot;’strikingly similar' to human musical traditions&quot;. The click sounds made by sperm whales and dolphins are not strictly song, but the clicking sequences have been suggested to be individualized rhythmic sequences that communicate the identity of a single whale to other whales in its group and allows the groups to coordinate foraging activities.",
+    "video" : [
+        {"format":"mp4", "link" : "http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4"},
+        {"format":"mp4", "link" : "http://mirrorblender.top-ix.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_h264.mov" },
+        {"format":"ogg", "link" : "http://mirrorblender.top-ix.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_stereo.ogg"}
+    ],
+    "audio" : [
+        {"format":"mp3", "link" : "https://archive.org/download/HumpbackWhalesSongsSoundsVocalizations/Humpback_whale_song_2_64kb.mp3"},
+        {"format":"mp3", "link" : "http://archive.org/download/HumpbackWhalesSongsSoundsVocalizations/Humpback_whale_song_2.mp3"},
+        {"format":"wav", "link" : "http://www.oceanmammalinst.com/songs/hmpback2.wav"},
+        {"format":"ogg", "link" : "http://archive.org/download/HumpbackWhalesSongsSoundsVocalizations/Humpback_whale_song_2.ogg"}
+    ],
+    "creditsTitle" : "Credits",
+    "credits" : [
+        {"typeName":"Video", "link":"http://www.bigbuckbunny.org/index.php/download/", "linkName" : "Big Buck Bunny"},
+        {"typeName":"Audio", "link":"http://archive.org/details/HumpbackWhalesSongsSoundsVocalizations", "linkName" : "Archive.org"},
+        {"typeName":"Image", "link":"http://secure.flickr.com/photos/38504374@N02/3600787930/", "linkName" : "Flickr"},
+        {"typeName":"Text", "link":"http://en.wikipedia.org/wiki/Whale_vocalization#Song_of_the_Humpback_Whale", "linkName" : "Wikipedia"}
+    ],
+    "pageBy" : "Page by <a href='http://strange-quark.com'>F. Unterseher</a>"
+}

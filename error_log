@@ -1,0 +1,4 @@
+[08-Sep-2014 07:36:55 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 130968 bytes) in /home/strangeq/public_html/framework/core/Config.php on line 490
+[12-Sep-2014 18:47:01 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 130968 bytes) in /home/strangeq/public_html/framework/core/Config.php on line 490
+[13-Sep-2014 07:40:45 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 130968 bytes) in /home/strangeq/public_html/framework/core/Config.php on line 490
+[16-Sep-2014 14:51:35 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 130968 bytes) in /home/strangeq/public_html/framework/core/Config.php on line 490

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="http://strange-quark.dev/"><!--[if lte IE 6]></base><![endif]-->
+  <meta name="generator" content="SilverStripe - http://silverstripe.org" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+  <title>Strange Quark | Page not found</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/themes/strange/css/layout.css?m=1390548790" />
+<link rel="stylesheet" type="text/css" href="/themes/strange/css/typography.css?m=1383878360" />
+<link rel="stylesheet" type="text/css" href="/themes/strange/css/form.css?m=1383868808" />
+</head>
+  
+<body>
+    <div id="Container">
+    <div id="ContactModal">
+        <div class="modalShade"></div>
+        <div class="formWrap">
+            <div class="innerForm">
+                <h1>REQUEST WORK</h1>
+                
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+      <div id="Layout" class="mainWidth">
+        <p>Sorry, it seems you were trying to access a page that doesn't exist.</p><p>Please check the spelling of the URL you were trying to access and try again.</p>
+
+
+      </div>
+
+      <div id="Footer">
+        <div class="barrier" id="footBarrier"></div>
+        <a id="footLogo" href="http://strange-quark.dev/"></a>
+        <div class="mainWidth">
+            <div id="Navigation">
+                
+                <ul>
+                  
+
+                    <li class="link"><a href="/" title="Home" class="hoverGlitch">Home</a>
+                             
+                              
+                    </li>
+                  
+
+                    <li class="link"><a href="/contact/" title="Contact" class="hoverGlitch">Contact</a>
+                            
+                                <div class="dropUp">
+                                    <div class="echoBox">
+                                            <a href="/page-not-found/#" id="requestWork" class="reqForm">Request Work</a>
+                                    </div>
+                                </div>
+                             
+                              
+                    </li>
+                  
+
+                    <li class="link"><a href="/illustration/" title="Illustration" class="hoverGlitch">Illustration</a>
+                             
+                              
+                    </li>
+                  
+
+                    <li class="link"><a href="/web-development/" title="Web Development" class="hoverGlitch">Web Development</a>
+                             
+                              
+                    </li>
+                  
+
+                    <li class="link"><a href="/about/" title="About" class="hoverGlitch">About</a>
+                             
+                              
+                    </li>
+                  
+
+                    <li class="link"><a href="/blog/" title="Blog" class="hoverGlitch">Blog</a>
+                             
+                            
+                                <div class="dropUp">
+                                    <div class="echoBox">
+
+                                    </div>
+                                </div>
+                              
+                    </li>
+                  
+                </ul>
+               
+              </div>
+            <div id="social" >
+                <a href="/page-not-found/#" class="twitter"></a>
+                <a href="/page-not-found/#" class="linkedIn"></a>
+                <a href="/page-not-found/#" class="faceBook"></a>
+            </div>
+            <p id ="copyright">© 2014 Strange Quark</p>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
